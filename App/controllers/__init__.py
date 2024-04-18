@@ -4,7 +4,7 @@ from .auth import *
 def initialize_db():
   db.drop_all()
   db.create_all()
-with open('exercise.xlsx', mode='r', encoding='utf-8') as file:
+with open('exercise.csv', mode='r', encoding='utf-8') as file:
     csv_reader = csv.DictReader(file)
     for row in csv_reader:
       workout = Workout(id=row['ID'],

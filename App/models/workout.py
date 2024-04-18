@@ -2,7 +2,7 @@ from App.database import db
 
 class Workout(db.Model):
     id=db.Column(db.integer, primary_key=True,autoincrement=True)
-    excercise==db.Column(db.String(75))
+    excercise=db.Column(db.String(75))
     exercise_type=db.Column(db.String(100))
     Targeted_body_part=db.Column(db.String(100))
 
