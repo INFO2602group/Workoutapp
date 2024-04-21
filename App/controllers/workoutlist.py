@@ -7,6 +7,6 @@ def add_workout(routineid, workoutid):
   db.session.commit()
 
 def removeworkout(routineid,workout):
-  workout=workoutlist.query.filter_by(routineid=routineid,workoutid=workoutid).frist
+  workout=workoutlist.query.filter_by(routineid=routineid,workoutid=workoutid).first()
   db.session.remove(workout)
-  db.session.commit()
+  db.session.commit() 
