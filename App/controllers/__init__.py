@@ -1,7 +1,8 @@
 from .user import *
 from .auth import *
 from .routine import *
-#from .exercise import *
+from .workout import *
+from .workoutlist import *
 
 
 def initialize_db():
