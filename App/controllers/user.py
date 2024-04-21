@@ -1,5 +1,7 @@
 from App.models import User
 from App.database import db
+from App.models.workout import Workout
+import csv
 
 def create_user(username, password):
     newuser = User(username=username, password=password)
@@ -30,4 +32,19 @@ def update_user(id, username):
         db.session.add(user)
         return db.session.commit()
     return None
-    
+  
+def initialize_db():
+  db.drop_all()
+  db.create_all()
+  with open('App/exercises.csv', mode='r', encoding='utf-8') as file:
+    csv_reader = csv.DictReader(file)
+    for row in csv_reader:
+      list = Workout(id=row['id'],
+                        excercise=row['name'],
+                        exercise_type=row['exercise_type'],
+                        Targeted_body_part=row['Targeted_body_part'],
+                        Video_Link=row['Video_Link'])
+      db.session.add(list)
+    db.session.commit()
+    return None
+ 
