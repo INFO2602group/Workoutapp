@@ -1,10 +1,10 @@
 from App.database import db
 
-class WorkoutList(db.Model)
-  routineid= db.Column(db.Integer, primary_key=True,db.ForeignKey('routine.id'))
-  workoutid=db.Column(db.Integer,primary_key=True,db.ForeignKey('workout.id'))
+class WorkoutList(db.Model):
+  routineid = db.Column(db.Integer, db.ForeignKey('routine.id'), primary_key=True)
+  workoutid=db.Column(db.Integer,db.ForeignKey('workout.id'),primary_key=True)
 
-  def __init__(self, routineid, workoutid)
+  def __init__(self, routineid, workoutid):
     self.routineid=routineid
     self.workoutid=workoutid
 
