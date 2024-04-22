@@ -17,7 +17,9 @@ def create_routine():
     routine_name = request.form.get('routine_name')
 
     # Create a new routine with the provided name and user id
-    new_routine = Routine(name=routine_name, current_user.id)
+
+    new_routine = Routine(name=routine_name, user_id=current_user.id)
+
 
     # Add the new routine to the database session
     db.session.add(new_routine)
