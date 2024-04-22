@@ -9,8 +9,9 @@ from App.controllers import (
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 
+routine_views = Blueprint('routine_views', __name__, template_folder='../templates')
 
-@app.route('/create_routine', methods=['POST'])
+@auth_views.route('/create_routine', methods=['POST'])
 @jwt_required()
 def create_routine():
     # Get the routine name from the form data
@@ -29,3 +30,6 @@ def create_routine():
 
     # Redirect to a route or URL where you want to go after creating the routine
     return redirect(url_for('/'))  # Redirect to the index route
+
+
+    
