@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-  
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
      <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,17 +13,17 @@
 
   </head>
   <body>
-    
+
       <nav class="purple">
           <div class="nav-wrapper">
-              <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
+              <!-- <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a> -->
               <ul id="nav-mobile" class="left">
+                {% if is_authenticated %}
                   <li><a href="/">Home</a></li>
                   <li><a href="/users">Users Jinja</a></li>
-                  {% if is_authenticated %}
-                    <li><a href="/identify">Identify</a></li>
-                  {% endif %}
+                  <li><a href="/identify">Identify</a></li>
                   <li><a href="/static/users">Users JS</a></li>
+                {% endif %}
               </ul>
               {% if is_authenticated %}
               <ul id="nav-mobile" class="right">
@@ -42,7 +42,7 @@
                   <button type="submit" class="btn waves-effect waves-light">Login</button>
               </form>
               {% endif %}
-              
+
           </div>
       </nav>
       <style>
@@ -64,7 +64,7 @@
               {% endfor %}
           {% endif %}
         {% endwith %}
-       
+
     </script>
   </body>
 </html>
