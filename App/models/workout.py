@@ -1,11 +1,14 @@
 from App.database import db
 
 class Workout(db.Model):
+
     id=db.Column(db.Integer, primary_key=True,autoincrement=True)
     excercise=db.Column(db.String(75))
     exercise_type=db.Column(db.String(100))
     Targeted_body_part=db.Column(db.String(100))
     Video_Link =db.Column(db.String(200))
+
+ 
 
     def __init__(self, id,excercise,exercise_type,Targeted_body_part,Video_Link):
         self.id=id
