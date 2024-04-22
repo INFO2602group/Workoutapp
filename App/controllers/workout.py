@@ -15,3 +15,11 @@ def initialize_db():
       db.session.add(workout)
     db.session.commit()
     return None'''
+
+def get_exercise(id):
+  return Workout.query.get(id)
+
+def get_all_users():
+  return Workout.query.all()
+
+ 

@@ -1,11 +1,11 @@
 from App.database import db
 
 class Workout(db.Model):
-    id=db.Column(db.Integer, primary_key=True)
-    excercise=db.Column(db.String(75),nullable=False)
-    exercise_type=db.Column(db.String(100),nullable=False)
-    Targeted_body_part=db.Column(db.String(100),nullable=False)
-
+    id=db.Column(db.integer, primary_key=True,autoincrement=True)
+    excercise=db.Column(db.String(75))
+    exercise_type=db.Column(db.String(100))
+    Targeted_body_part=db.Column(db.String(100))
+    Video_Link =db.column(db.String(200))
 
     def __init__(self, id,excercise,exercise_type,Targeted_body_part,Video_Link):
         self.id=id
@@ -24,5 +24,3 @@ class Workout(db.Model):
         }
 
     # end def
-
-
