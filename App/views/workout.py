@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 workout_views = Blueprint('workout_views', __name__, template_folder='../templates')
 
-'''
+
 
 @app.route('/search', methods=['GET', 'POST'])
 def search_exercise():
@@ -21,4 +21,4 @@ def search_exercise():
         return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)'''
+    app.run(debug=True)
