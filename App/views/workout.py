@@ -7,6 +7,7 @@ workout_views = Blueprint('workout_views', __name__, template_folder='../templat
 
 
 
+
 @app.route('/search', methods=['GET', 'POST'])
 def search_exercise():
     if request.method == 'POST':
